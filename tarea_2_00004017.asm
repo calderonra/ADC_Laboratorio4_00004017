@@ -35,7 +35,28 @@ loopOverlow: inc bx
 	mov	cx,0000h
 	mov	dx,0000h
 	
-	mov	
+	mov	dx, 0d
+	mov	[220h], dx; 
+	mov	dx, 1h
+	mov	[221h], dx;
+
+	mov	bx,1h;
+
+while:
+	inc	bx
+	mov	ax, [220h+bx-1h]
+	mov	cx, [220h+bx-2h]
+	add	ax,cx
+
+	cmp	ax, 0xff
+
+	mov	[220h+bx],ax 
+	cmp	bx, 10h
+	jb while
+
+
+
+
 
 	;Ejercicio 1
 
