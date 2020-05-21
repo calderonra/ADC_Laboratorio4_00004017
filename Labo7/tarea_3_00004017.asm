@@ -44,7 +44,7 @@ m_cursr:mov 	ah, 02h
 phrase:	mov 	di, 0d
 lupi:	mov 	cl, [msg+di]
         mov 	bh, 9d 
-        mov     ax, 20d
+        mov     ax, 10d
 	call    m_cursr
 	call 	w_char
 	inc	di
@@ -56,7 +56,7 @@ lupi:	mov 	cl, [msg+di]
 
 lupi2:	mov 	cl, [msg2+di]
         mov 	bh, 12d ; fila
-        mov     ax, 20d; columna
+        mov     ax, 18d; columna
         call    m_cursr
         call 	w_char
         inc	di
@@ -78,7 +78,7 @@ lupi3:	mov 	cl, [msg3+di]
 
 lupi4:	mov 	cl, [msg4+di]
         mov 	bh, 18d ; fila
-        mov     ax, 20d; columna
+        mov     ax, 22d; columna
         call    m_cursr
         call 	w_char
         inc	di
@@ -98,7 +98,7 @@ section .data3
 msg3	db 	"Quiere olvidarse de ese bobo"
 len3 	equ	$-msg3
 
-section .data3
+section .data4
 msg4	db 	"Porque el cabron le fue infiel"
 len4 	equ	$-msg4
 
