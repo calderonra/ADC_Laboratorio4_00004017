@@ -61,14 +61,14 @@ while:
 	;Ejercicio 1
 
 	mov     ax, 4d
-        mov     bx, 0d
+	mov     bx, 0d
 	add     ax, bx ;AX = 4
 
-        mov     bx, 1d
-        add     ax, bx ;AX =5
+    mov     bx, 1d
+    add     ax, bx ;AX =5
 
-        mov     bx, 7d
-        add     ax, bx ; AX = 4
+    mov     bx, 7d
+    add     ax, bx ; AX = 4
 
 	mov	dx, 0000h ; limpiando
 	mov	bx, 4d
