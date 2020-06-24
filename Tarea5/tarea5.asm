@@ -15,12 +15,29 @@ section .text
 	mov 	di, 75d ; Y -> Fila
 	call 	linea_h
 
+	
+	mov 	si, 25d ; X -> Columna
+	mov 	di, 85d ; Y -> Fila
+	call 	linea_h
+
+
+	mov 	si, 15d ; X -> Columna
+	mov 	di, 15d ; Y -> Fila
+	call 	linea_b
 
 
 	mov	si, 25d ; X -> Columna
 	mov 	di, 25d ; Y -> Fila
 	call 	linea_v
 
+	mov	si, 15d ; X -> Columna
+	mov 	di, 15d ; Y -> Fila
+	call 	linea_a
+
+
+	mov		si, 25d ; X -> Columna
+	mov 	di, 75d ; Y -> Fila
+	call 	linea_h
 
 
 
@@ -57,6 +74,39 @@ lupi_v:	mov 	cx, si ; Columna
 	cmp 	di, 150d
 	jne 	lupi_v
 	ret
+
+linea_a:
+lupi_a:	mov 	cx, si ; Columna 
+	mov	dx, 0d ; Fila
+	add 	dx, di
+	call 	pixel
+	inc 	di
+	cmp 	di, 150d
+	jne 	lupi_a
+	ret
+
+
+linea_b: 
+lupi_b:	mov 	cx, 0d ; Columna 
+	add 	cx, si
+	mov	dx, di ; Fila
+	call 	pixel
+	inc 	si
+	cmp 	si, 75d
+	jne 	lupi_b
+	ret
+
+linea_mini_h: 
+lupi_mh: mov 	cx, 0d ; Columna 
+	add 	cx, si
+	mov	dx, di ; Fila
+	call 	pixel
+	inc 	si
+	cmp 	si, 25d
+	jne 	lupi_mh
+	ret
+
+
 
 
 kb: 	mov	ah, 00h
