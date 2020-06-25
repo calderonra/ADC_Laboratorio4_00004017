@@ -35,10 +35,15 @@ section .text
 	call 	linea_a
 
 
-	mov		si, 25d ; X -> Columna
-	mov 	di, 75d ; Y -> Fila
-	call 	linea_h
+	mov		si, 15d ; X -> Columna
+	mov 	di, 150d ; Y -> Fila
+	call 	linea_mini_h
 
+;esta se supone que era para cerrarlas linea pequeñas verticales pero no me sirvio, nunca cambio de tamaño, pero si estaba bien ubicada
+
+;	mov		si, 75d ; X -> Columna
+;	mov 	di, 25d ; Y -> Fila
+;	call 	linea_miniV
 
 
 	call 	kb		; Utilizamos espera de alguna tecla
@@ -106,7 +111,16 @@ lupi_mh: mov 	cx, 0d ; Columna
 	jne 	lupi_mh
 	ret
 
-
+;
+;linea_miniV:
+;lupi_miniV:	mov 	cx, si ; Columna 
+;	mov	dx, 0d ; Fila
+;	add 	dx, di
+;	call 	pixel
+;	inc 	di
+;	cmp 	di, 15d
+;	jne 	lupi_v
+;	ret
 
 
 kb: 	mov	ah, 00h
